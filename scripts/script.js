@@ -1103,7 +1103,7 @@ function setupAjaxNavigation() {
   }
 
   async function loadPage(url) {
-    const fadeDuration = 100;
+    const fadeDuration = 500;
     contentEl.classList.add('fade-out');
     await new Promise(resolve => setTimeout(resolve, fadeDuration));
 
