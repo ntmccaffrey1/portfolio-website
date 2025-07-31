@@ -35,7 +35,7 @@
         <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Nolan McCaffrey" />
         <link rel="manifest" href="/images/logos/site.webmanifest" />
-        <!-- <script>
+        <script>
             (function () {
                 const theme = localStorage.getItem('theme') || 'light';
                 document.documentElement.setAttribute('data-theme', theme);
@@ -45,11 +45,9 @@
                 meta.setAttribute('content', theme === 'dark' ? '#121212' : '#e2ebe9');
                 }
 
-                if (theme === 'dark') {
-                document.documentElement.style.backgroundColor = '#121212';
-                }
+                document.documentElement.style.backgroundColor = theme === 'dark' ? '#121212' : '#e2ebe9';
             })();
-        </script> -->
+        </script>
     </head>
 </head>
 <body id="project">
