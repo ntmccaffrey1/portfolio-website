@@ -486,6 +486,7 @@ function toggleTheme() {
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       updateThemeColor(newTheme);
+      document.documentElement.style.backgroundColor = newTheme === 'dark' ? '#121212' : '#e2ebe9';
     });
   });
 }
