@@ -912,6 +912,8 @@ button.toggle-theme {
 .menu__social--links {
     display: flex;
     gap: var(--xsmall-gap);
+    font-size: 14px;
+    font-weight: bold;
 }
 
 a.menu__social-link {
@@ -2125,7 +2127,6 @@ a.footer__social-link {
     justify-content: center;
     position: relative;
     overflow: visible;
-    transition: border-color 0.3s cubic-bezier(.16, 1, .3, 1.15);
 }
 
 a.footer__social-link img {
