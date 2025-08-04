@@ -397,7 +397,7 @@ section#home {
   max-height: 50vh;
   position: relative;
   background: transparent;
-  border-radius: 50%;
+  clip-path: circle(50%);
   overflow: hidden;
   display: flex;
   align-items: center;
