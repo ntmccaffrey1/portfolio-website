@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" id="theme-color-meta" content="#e2ebe9" />
+        <title>Page Not found</title>
+        <meta name="description" content="Rhode Island based web developer and designer with over 10 years of experience building and maintaining web applications.">
+        <meta name="application-name" content="Nolan McCaffrey - Web Developer & Designer">
+        <link rel="canonical" href="https://nolanmccaffrey.com/">
+        <meta property="og:title" content="Page Not Found">
+        <meta property="og:description" content="Rhode Island based web developer and designer with over 10 years of experience building and maintaining web applications.">
+        <meta property="og:site_name" content="Nolan McCaffrey - Rhode Island based Web Developer & Designer">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:image" content="/images/misc/og_image.webp">
+        <meta property="og:image:type" content="image/webp">
+        <meta property="og:image:width" content="1660">
+        <meta property="og:image:height" content="630">
+        <meta property="og:image:alt" content="Nolan McCaffrey | Web Developer & Designer">
+        <meta property="og:url" content="https://nolanmccaffrey.com/">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Page Not Found">
+        <meta name="twitter:description" content="Rhode Island based web developer and designer with over 10 years of experience building and maintaining web applications.">
+        <meta name="twitter:image" content="/images/misc/og_image.webp">
+        <meta name="twitter:image:width" content="1024">
+        <meta name="twitter:image:height" content="576">
+        <meta name="twitter:image:alt" content="Nolan McCaffrey | Web Developer & Designer">
+        <link rel="stylesheet" href="/styles/style.min.css">
+        <link rel="preload" as="image" href="/images/misc/og_image.webp">
+        <link rel="icon" type="image/png" href="/images/logos/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/images/logos/favicon.svg" />
+        <link rel="shortcut icon" href="/images/logos/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/logos/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Nolan McCaffrey" />
+        <link rel="manifest" href="/images/logos/site.webmanifest" />
+        <script>
+            (function () {
+                const theme = localStorage.getItem('theme') || 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+
+                const meta = document.querySelector('meta[name="theme-color"]');
+                if (meta) {
+                meta.setAttribute('content', theme === 'dark' ? '#121212' : '#e2ebe9');
+                }
+
+                document.documentElement.style.backgroundColor = theme === 'dark' ? '#121212' : '#e2ebe9';
+            })();
+        </script>
+    </head>
+    <body id="error-page">
+        <div class="cursor-grid"></div>
+        <div id="loader">
+            <div class="loader-grid"></div>
+            <svg class="svg1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75">
+                <rect x="0" y="0" width="75" height="75" class="bg" />
+                <g transform="translate(20.920898, 56.999994)">
+                    <path class="n-stroke" d="M 21.71875 -3.578125 L 22.703125 -3.578125 L 22.703125 -37.921875 L 29.84375 -37.921875 L 29.84375 0 L 15.875 0 L 11.4375 -34.34375 L 10.453125 -34.34375 L 10.453125 0 L 3.296875 0 L 3.296875 -37.921875 L 17.28125 -37.921875 Z"/>
+                    <path class="n-fill" d="M 21.71875 -3.578125 L 22.703125 -3.578125 L 22.703125 -37.921875 L 29.84375 -37.921875 L 29.84375 0 L 15.875 0 L 11.4375 -34.34375 L 10.453125 -34.34375 L 10.453125 0 L 3.296875 0 L 3.296875 -37.921875 L 17.28125 -37.921875 Z"/>
+                </g>
+            </svg>
+            <div class="loader-percentage">0%</div>
+        </div>
+        <div id="site" style="display: none;">
+            <header id="header" class="fade-down"></header>
+            <main id="content">
+                <section id="page-not-found">
+                    <div class="container no-padding-top no-padding-bottom">
+                        <div class="error__content">
+                            <h1 class="stagger-fade">404</h1>
+                            <p class="stagger-fade">Looks like the page you're looking for cannot be found or no longer exists.</p>
+                            <a href="/#" class="btn blur fade-upNone" data-link><span class="sub_square"></span> Back to Home</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer id="footer"></footer>
+        </div>
+        <img class="hover-image" />
+        <div class="noise"></div>
+        <div class="cursor-label" id="cursorLabel"><span class="sub_square"></span> View</div>
+        <div id="menu__overlay"></div>
+        <script src="scripts/lenis.min.js"></script>
+        <script src="scripts/script.min.js"></script>
+    </body>
+</html>

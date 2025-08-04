@@ -2093,6 +2093,32 @@ p.title {
 }
 
 /* =================================
+   404 Page
+================================= */
+body#error-page footer {
+    position: fixed;
+    bottom: 0;
+}
+
+.error__content {
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.error__content h1 {
+    font-size: 10rem;
+}
+
+.error__content p {
+    max-width: 26rem;
+    text-align: center;
+}
+
+/* =================================
    Footer
 ================================= */
 
