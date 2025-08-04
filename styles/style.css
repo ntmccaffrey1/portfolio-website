@@ -2236,9 +2236,9 @@ a.footer__social-link img {
 @media screen and (max-width: 767px) {
     .footer__col.row {
         grid-column-gap: .5rem;
-        grid-row-gap: 2rem;
-        grid-template-rows: 2fr auto;
-        grid-template-columns: 1fr 1fr;
+        grid-row-gap: 1rem;
+        grid-template-rows: auto;
+        grid-template-columns: auto;
         justify-items: center;
     }
     .footer__col--left {
