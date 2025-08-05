@@ -27,7 +27,7 @@
         <meta name="twitter:image:height" content="576">
         <meta name="twitter:image:alt" content="Nolan McCaffrey | Web Developer & Designer">
         <link rel="stylesheet" href="/styles/style.min.css">
-        <link rel="preload" as="image" href="/images/misc/og_image.webp">
+        <link as="image" href="/images/misc/og_image.webp">
         <link rel="icon" type="image/png" href="/images/logos/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/images/logos/favicon.svg" />
         <link rel="shortcut icon" href="/images/logos/favicon.ico" type="image/x-icon" />
@@ -75,7 +75,7 @@
                                 <div class="hero__round--bg">
                                     <div class="hero__round--bg-circle"><div class="circle-grid"></div></div>
                                 </div>
-                                <img class="fade-up" src="images/misc/profile.webp" alt="Nolan McCaffrey - Web Developer and Designer" width="500px" height="500px">
+                                <img class="fade-up" src="images/misc/profile.webp" alt="Nolan McCaffrey - Web Developer and Designer" fetchpriority="high" width="500px" height="500px">
                             </div>
                             <div class="hero__column--right">
                                 <h2 class="stagger-fade">Web Developer & Designer</h2>
@@ -463,7 +463,7 @@
         <div class="noise"></div>
         <div class="cursor-label" id="cursorLabel"><span class="sub_square"></span> View</div>
         <div id="menu__overlay"></div>
-        <script src="scripts/lenis.min.js"></script>
-        <script src="scripts/script.min.js"></script>
+        <script src="scripts/lenis.min.js" defer></script>
+        <script src="scripts/script.min.js" defer></script>
     </body>
 </html>
