@@ -1,5 +1,5 @@
 @font-face {
-    font-display: block;
+    font-display: swap;
     font-family: 'Space Mono';
     src: url('/fonts/SpaceMono-Regular.woff2') format('woff2');
     font-weight: 500;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-display: block;
+    font-display: swap;
     font-family: 'Space Mono';
     src: url('/fonts/SpaceMono-Bold.woff2') format('woff2');
     font-weight: 900;
