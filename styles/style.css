@@ -2139,7 +2139,6 @@ footer .container {
 footer p {
     font-size: var(--xsmall-font);
     font-weight: 300;
-    opacity: .5;
 }
 
 a.footer__social-link {
