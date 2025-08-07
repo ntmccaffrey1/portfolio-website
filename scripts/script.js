@@ -602,6 +602,8 @@ function fadeHero() {
 function fillCircleWithSquares() {
   const circle = document.querySelector('.hero__round--bg-circle');
   const circleGrid = document.querySelector('.circle-grid');
+  const root = document.documentElement;
+  const neonBg = getComputedStyle(root).getPropertyValue('--color-neon').trim();
 
   if (!circle || !circleGrid) return;
 
@@ -630,7 +632,7 @@ function fillCircleWithSquares() {
   }
 
   setTimeout(() => {
-    circle.style.backgroundColor = '#76f085';
+    circle.style.backgroundColor = neonBg;
     circle.innerHTML = '';
   }, maxDelay + 800);
 }

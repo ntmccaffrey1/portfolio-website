@@ -312,7 +312,8 @@ section {
     --black: #000;
     --white: #fff;
     --border-color: #9b9b9b;
-    --color-neon: #76f085;
+    /* --color-neon: #76f085; */
+    --color-neon: #54F1AD;
     --color-light-gray: #e2ebe9;
     --color-med-gray: #b6c9c5;
 
@@ -1012,8 +1013,9 @@ a.menu__social-link img {
 }   
 
 .toolset .tools span.opaque {
-    background: rgba(118, 240, 133, .5);
-    color: rgba(0, 0, 0, .5);
+    /* background: rgba(118, 240, 133, .5); */
+    background: rgba(84, 241, 173, .4);
+    color: rgba(0, 0, 0, .4);
 }
 
 @media (min-width: 767px) {
