@@ -1986,13 +1986,13 @@ a.menu__social-link img {
 }
 
 .awards__table--row-img img {
-    max-width: clamp(3.125rem, 10vw, 4.6875rem);
+    max-width: clamp(3.125rem, 5vw, 4.6875rem);
     clip-path: var(--med-clip);
 }
 
 .awards__table--row-img svg {
-    max-width: clamp(3.125rem, 10vw, 4.6875rem);
-    max-height: clamp(3.125rem, 10vw, 4.6875rem);
+    max-width: clamp(3.125rem, 5vw, 4.6875rem);
+    max-height: clamp(3.125rem, 5vw, 4.6875rem);
     clip-path: var(--med-clip);
 }
 
