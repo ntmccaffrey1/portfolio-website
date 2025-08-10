@@ -730,7 +730,7 @@ button.toggle-theme {
     list-style: none;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: clamp(1.5rem, 4vw, 3rem);
 }
 
 #main-menu ul li {
@@ -2116,6 +2116,48 @@ body#error-page footer {
 .error__content p {
     max-width: 26rem;
     text-align: center;
+}
+
+/* =================================
+   Privacy Policy
+================================= */
+
+.privacy__content-heading {
+    text-align: center;
+    padding-bottom: clamp(var(--small-gap),5vw,3rem);
+}
+
+.privacy__content-heading p {
+    margin-bottom: 15px;
+}    
+
+.privacy__content-content {
+    margin: 0 auto;
+    max-width: 768px;
+}
+
+.privacy__content-content h3 {
+    margin-top: 25px;
+}
+
+.privacy__content-content h3, .privacy__content-content p {
+    margin-bottom: 15px;
+}
+
+.privacy__content-content a {
+    font-weight: bold;
+}
+
+.privacy__content-content ul {
+    padding-left: 30px;
+    margin-bottom: 15px;
+    font-size: var(--base-font);
+}
+
+.privacy__content-content ul li {
+    text-transform: uppercase;
+    list-style-type: square;
+    line-height: 1.4;
 }
 
 /* =================================
