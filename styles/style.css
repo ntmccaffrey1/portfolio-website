@@ -1956,9 +1956,15 @@ a.menu__social-link img {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px dashed var(--border-color);
-    padding: clamp(10px, 4vw, 0.9375rem) 0;
+    padding: clamp(10px, 4vw, 0.9375rem) 0.9375rem;
     gap: clamp(var(--small-gap), 3vw, var(--med-gap));
     position: relative;
+    transition: .3s;
+}
+
+a .awards__table--row:hover {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .awards__table--row p {
