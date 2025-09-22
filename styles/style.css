@@ -1508,6 +1508,7 @@ a.menu__social-link img {
 
 .next__project--block.visible {
     filter: blur(0);
+    transform: translateY(0);
     opacity: 1;
 }    
 
