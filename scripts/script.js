@@ -655,6 +655,50 @@ function runFillCircleWithLoaderCheck() {
 }
 
 /* =================================
+   Show Next Project On Scroll
+================================= */
+
+function nextProj() {
+  const container = document.querySelector('.next__project');
+  const block = document.querySelector('.next__project--block');
+  const footer = document.querySelector('.footer__wrap');
+  if (!container || !block || !footer) return;
+
+  const onScrollOrResize = () => {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+
+    const footerTop = footer.getBoundingClientRect().top + window.scrollY;
+    const blockHeight = block.offsetHeight;
+
+    // Fade at 60%
+    const scrolled = (scrollTop + windowHeight) / docHeight;
+    block.classList.toggle('visible', scrolled >= 0.6);
+
+    // Block’s document-space top while fixed at bottom:50px
+    const blockTopWhenFixed =
+      scrollTop + windowHeight - 50 - blockHeight;
+
+    const stopPoint = footerTop - blockHeight - 20; // 20px buffer above footer
+
+    if (blockTopWhenFixed >= stopPoint) {
+      container.classList.add('stuck');
+      container.style.position = 'absolute';
+      container.style.top = `${stopPoint}px`;
+    } else {
+      container.classList.remove('stuck');
+      container.style.position = 'fixed';
+      container.style.top = ''; // rely on CSS bottom:50px
+    }
+  };
+
+  window.addEventListener('scroll', onScrollOrResize, { passive: true });
+  window.addEventListener('resize', onScrollOrResize);
+  onScrollOrResize();
+}
+
+/* =================================
    Run Animation after Loader
 ================================= */
 
@@ -910,7 +954,7 @@ function contactBtn() {
 
 function cursorLabel() {
   const label = document.getElementById('cursorLabel');
-  const targets = document.querySelectorAll('.work__list--item-content-img.cursor--label');
+  const targets = document.querySelectorAll('.cursor--label');
 
   const canHover = window.matchMedia('(hover: hover)').matches;
   if (!canHover) return; 
@@ -1228,6 +1272,7 @@ function initAnimations() {
   workSlider();
   hoverBlurGlobal();
   cursorLabel();
+  nextProj();
   videoToggle();
   hoverImage();
   staggerFade();

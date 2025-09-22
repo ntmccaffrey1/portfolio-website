@@ -316,6 +316,7 @@ section {
     --color-neon: #54F1AD;
     --color-light-gray: #e2ebe9;
     --color-med-gray: #b6c9c5;
+    --color-light-black: #202020;
 
     /* Font Sizes */
     --xsmall-font: 0.875rem;
@@ -1444,6 +1445,95 @@ a.menu__social-link img {
         display: flex;
     }
 }  
+
+/* =================================
+   Next Project Block
+================================= */
+
+.next__project {
+    display: flex;
+    position: fixed;
+    bottom: clamp(25px, 5vw, 50px);
+    z-index: 100;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.next__project.stuck {
+  position: absolute;
+  bottom: auto;
+}
+
+.next__project--container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.next__project--container a {
+    display: inline-flex;
+    width: max-content;
+}
+
+[data-theme=dark] .next__project--block  {
+    background-color: var(--color-med-gray);
+    color: var(--color-bg);
+}
+
+[data-theme=dark] .next__project--block p {
+    color: #000;
+}
+
+[data-theme=light] .next__project--block  {
+    background-color: var(--color-light-black);
+}
+
+[data-theme=light] .next__project--block p {
+    color: #fff;
+}
+
+.next__project--block {
+    width: clamp(275px, calc(250px + (100 * (100vw - 768px) / 892)), 350px);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: clamp(10px,1vw,.9375rem);
+    clip-path: var(--rev-clip);
+    opacity: 0;
+    transform: translateY(10px);
+    transition-delay: .2s;
+    transition: opacity .6s ease,transform .6s ease,filter .6s ease;
+    filter: blur(3px);
+}
+
+.next__project--block.visible {
+    filter: blur(0);
+    opacity: 1;
+}    
+
+.next__project--block p {
+    line-height: 1;
+    color: var(--text-color);
+    display: flex;
+    gap: .25rem;
+    flex-direction: column;
+}
+
+.next__project--block-img {
+    width: clamp(22%, 6vw, 30%);
+    display: flex;
+}
+
+.next__project--block-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.bold {
+    font-weight: bold;
+}
 
 /* =================================
    Section Heading
