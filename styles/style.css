@@ -2053,10 +2053,6 @@ a.menu__social-link img {
     transition: .3s;
 }
 
-a .awards__table--row:hover {
-    padding: clamp(10px, 4vw, 0.9375rem) 0.9375rem;
-}
-
 .awards__table--row p {
     line-height: 1;
 }
@@ -2119,10 +2115,16 @@ p.title {
     }
 }    
 
+@media (hover: hover) and (pointer: fine) {
+    a .awards__table--row:hover {
+        padding: clamp(10px, 4vw, 0.9375rem) 0.9375rem;
+    }
+}
+
 @media (hover: none) and (pointer: coarse) {
-  .hover-image {
-    display: none !important;
-  }
+    .hover-image {
+        display: none !important;
+    }
 }
 
 /* =================================

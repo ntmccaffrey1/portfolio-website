@@ -788,43 +788,53 @@ function workSlider() {
   // Touch support
   let startX = 0;
   let startY = 0;
+  let isDragging = false;
+  let isHorizontal = false;
   let currentTranslate = 0;
   let prevTranslate = 0;
-  let isSwiping = false;
 
   slider.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
-    isSwiping = true;
+    startY = e.touches[0].clientY;
+    isDragging = true;
+    isHorizontal = false;
 
     slider.style.transition = "none";
   }, { passive: true });
 
   slider.addEventListener('touchmove', (e) => {
-    if (!isSwiping) return;
+    if (!isDragging) return;
 
     const deltaX = e.touches[0].clientX - startX;
+    const deltaY = e.touches[0].clientY - startY;
 
-    currentTranslate = prevTranslate + deltaX;
+    if (!isHorizontal && Math.abs(deltaX) > Math.abs(deltaY)) {
+      isHorizontal = true;
+    }
 
-    slider.style.transform = `translateX(${currentTranslate}px)`;
-    e.preventDefault();
+    if (isHorizontal) {
+      e.preventDefault();
+      currentTranslate = prevTranslate + deltaX;
+      slider.style.transform = `translateX(${currentTranslate}px)`;
+    }
   }, { passive: false });
 
   slider.addEventListener('touchend', (e) => {
-    isSwiping = false;
+    if (!isDragging) return;
+    isDragging = false;
 
     const deltaX = e.changedTouches[0].clientX - startX;
 
     slider.style.transition = "transform 0.3s ease";
 
-    if (Math.abs(deltaX) > 50) {
+    if (isHorizontal && Math.abs(deltaX) > 50) {
       if (deltaX < 0 && index < slides.length - 1) index++;
       else if (deltaX > 0 && index > 0) index--;
     }
 
     updateSlider();
-
     prevTranslate = -index * slider.offsetWidth;
+    isHorizontal = false;
   });
 
   updateSlider();
