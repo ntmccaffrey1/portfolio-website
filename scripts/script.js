@@ -750,7 +750,9 @@ function workSlider() {
   }
 
   function updateSlider() {
-    slider.style.transform = `translateX(-${index * 100}%)`;
+    prevTranslate = -index * slider.offsetWidth;
+    slider.style.transform = `translateX(${prevTranslate}px)`;
+    slider.style.transition = "transform 0.3s ease";
     updateActiveSlide();
     updateNavButtons();
     if (currentSlideEl) currentSlideEl.textContent = index + 1;
@@ -786,34 +788,43 @@ function workSlider() {
   // Touch support
   let startX = 0;
   let startY = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
   let isSwiping = false;
 
   slider.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
-    startY = e.touches[0].clientY;
-    isSwiping = false;
+    isSwiping = true;
+
+    slider.style.transition = "none";
   }, { passive: true });
 
   slider.addEventListener('touchmove', (e) => {
-    const deltaX = e.touches[0].clientX - startX;
-    const deltaY = e.touches[0].clientY - startY;
+    if (!isSwiping) return;
 
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      isSwiping = true;
-      e.preventDefault();
-    }
+    const deltaX = e.touches[0].clientX - startX;
+
+    currentTranslate = prevTranslate + deltaX;
+
+    slider.style.transform = `translateX(${currentTranslate}px)`;
+    e.preventDefault();
   }, { passive: false });
 
   slider.addEventListener('touchend', (e) => {
-    if (!isSwiping) return;
+    isSwiping = false;
 
     const deltaX = e.changedTouches[0].clientX - startX;
+
+    slider.style.transition = "transform 0.3s ease";
 
     if (Math.abs(deltaX) > 50) {
       if (deltaX < 0 && index < slides.length - 1) index++;
       else if (deltaX > 0 && index > 0) index--;
-      updateSlider();
     }
+
+    updateSlider();
+
+    prevTranslate = -index * slider.offsetWidth;
   });
 
   updateSlider();
