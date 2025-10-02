@@ -104,7 +104,6 @@ p {
     line-height: 1.4;
     color: var(--text-color);
     font-weight: 500;
-    text-transform: uppercase;
 }
 
 b {
@@ -990,6 +989,7 @@ a.menu__social-link img {
 .tools {
     display: flex;
     flex-wrap: wrap;
+    text-transform: uppercase;
     justify-content: space-between;
     width: 100%;
     gap: var(--xsmall-gap);
@@ -2088,7 +2088,7 @@ a.menu__social-link img {
     clip-path: var(--med-clip);
 }
 
-p.title {
+.title {
     text-transform: uppercase;
     font-weight: bold;
     line-height: 1;
