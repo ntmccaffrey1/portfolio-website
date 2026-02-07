@@ -2105,8 +2105,8 @@ a.menu__social-link img {
 }
 
 .awards__table--row-img svg {
-    width: clamp(3.125rem, 5vw, 4.6875rem);
-    height: clamp(3.125rem, 5vw, 4.6875rem);
+    max-width: clamp(3.125rem, 5vw, 4.6875rem);
+    max-height: clamp(3.125rem, 5vw, 4.6875rem);
     clip-path: var(--med-clip);
 }
 
