@@ -61,7 +61,7 @@ body {
     margin: 0;
     font-family: 'Space Mono', 'Courier New', monospace;
     font-weight: 300;
-    font-size: var(--size-font);
+    font-size: var(--base-font);
     overflow-x: hidden;
 }
 
@@ -341,7 +341,7 @@ section {
 
     /* Font Sizes */
     --xsmall-font: 0.875rem;
-    --base-font: clamp(0.875rem, 1vw, 1rem);
+    --base-font: clamp(1rem, 1vw, 1.125rem);
     --h1-small: clamp(2.4rem, 2.8vw + var(--small-gap), 4.5rem);
     --h1-big: clamp(2.4rem, 4.8vw + var(--small-gap), 4.5rem);
     --h2: clamp(1.4rem, 1.8vw + var(--small-gap), 3rem);
