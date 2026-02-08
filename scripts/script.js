@@ -731,10 +731,17 @@ function workSlider() {
   const nextBtn = document.getElementById('next');
   const currentSlideEl = document.getElementById('current-slide');
   const totalSlidesEl = document.getElementById('total-slides');
+  const workCountEls = document.querySelectorAll('.work-count');
 
   if (!slider || slides.length === 0) return;
 
   let index = 0;
+
+  if (workCountEls) {
+    workCountEls.forEach(el => {
+      el.textContent = `[${slides.length}]`;
+    });
+  }
 
   function updateActiveSlide() {
     slides.forEach((slide, i) => {
