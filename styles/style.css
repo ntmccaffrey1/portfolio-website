@@ -2135,7 +2135,7 @@ a.menu__social-link img {
     transition: opacity 0.3s ease, visibility 0.3s ease;
     width: clamp(9.375rem, calc(11.2vw + 5.5625rem), 17.1875rem);
     height: auto;
-    clip-path: polygon(1.5625rem 0%, 100% 0%, 100% 100%, 0% 100%, 0% 1.5625rem);
+    border-radius: .125rem;
     z-index: 101;
 }
 
@@ -2210,6 +2210,8 @@ a.menu__social-link img {
 
 .awards__table--row-award p {
     line-height: 1;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 @media (min-width: 960px) {
